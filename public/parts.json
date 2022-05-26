@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Internal Parts",
+        "_id": 1,
+        "img": "https://s.wsj.net/public/resources/images/BN-BY253_itoyot_P_20140316220846.jpg",
+        "description": "These all parts are made by japan.there are very uniqe and high-qualified parts",
+        "MinQuantity": "5600",
+        "AvailAbleQuantity": "5000",
+        "price": "90000"
+    },
+    {
+        "name": "Engines Parts",
+        "_id": 2,
+        "img": "https://lirp.cdn-website.com/ccfd020e/dms3rep/multi/opt/188-640w.jpg",
+        "description": "Specfialy these parts are made for privet car.These are made by South Korea.Good Quality and Powerfull",
+        "MinQuantity": "36000",
+        "AvailAbleQuantity": "6500",
+        "price": "150000"
+    },
+    {
+        "name": "Motors Parts",
+        "_id": 3,
+        "img": "https://media.istockphoto.com/photos/old-machine-parts-picture-id625907638?k=20&m=625907638&s=612x612&w=0&h=VrYsjEQqj6d0NeoRgAhLo7XtcGiDcg7NOFx2V68yH0I=",
+        "description": "Every Motors Are Very Important Part For Every Cars For Thats Why We Manufactured These Uniqe Products",
+        "MinQuantity": "80300",
+        "AvailAbleQuantity": "85000",
+        "price": "45000"
+    },
+    {
+        "name": "Chaining Parts",
+        "_id": 4,
+        "img": "https://media.istockphoto.com/photos/car-engine-picture-id182145763?k=20&m=182145763&s=612x612&w=0&h=uWx57fWuceDuAMHU4AFQsYdPeVM007kZBzPkd_aT7xU=",
+        "description": "Chainses For Motor Which Is Very important.We Made These Chain By Solid Raw Irons And High-Technology",
+        "MinQuantity": "74000",
+        "AvailAbleQuantity": "9005",
+        "price": "2500"
+    },
+    {
+        "name": "Bodies Parts",
+        "_id": 5,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpuQHI_Y4mU_QaaTbXeBpr1xMQhqpLNXPTOZVz5nQIEXu63aSmGNo-RfleqtP-ZL7ka0E&usqp=CAU",
+        "description": "These Are Very Strong And Powerfull Body Which Is Made By Germany.We Providing Our Products All Over The World",
+        "MinQuantity": "17000",
+        "AvailAbleQuantity": "7500",
+        "price": "50000"
+    },
+    {
+        "name": "Wheels And Tyres",
+        "_id": 6,
+        "img": "https://media.istockphoto.com/photos/raised-car-on-a-blue-crane-for-engine-or-gearbox-repair-in-a-car-picture-id1227167234?k=20&m=1227167234&s=612x612&w=0&h=1lkENdsjzt3cAgAhT_YQb94VfKXpRCX2rnwdcQIb82E=",
+        "description": "Thes Wheels and Tyers Are Made By China.There Carbon Plastics Quality Are So Good.It Would Be Best Wheels For Your Car",
+        "MinQuantity": "90000",
+        "AvailAbleQuantity": "45800",
+        "price": "16000"
+    }
+]
