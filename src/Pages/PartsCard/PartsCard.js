@@ -15,7 +15,7 @@ const PartsCard = ({ part }) => {
                 <span>Available Quantity:{AvailAbleQuantity}</span>
                 <p>Price:{price}</p>
                 <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
+                    <button class="btn btn-primary">Purchase</button>
                 </div>
             </div>
         </div>
