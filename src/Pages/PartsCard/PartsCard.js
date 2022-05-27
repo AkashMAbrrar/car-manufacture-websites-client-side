@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PartsCard = ({ part }) => {
+const PartsCard = ({ part, setOrder }) => {
     const { name, img, description, MinQuantity, AvailAbleQuantity, price } = part;
 
     return (
@@ -15,7 +15,10 @@ const PartsCard = ({ part }) => {
                 <span>Available Quantity:{AvailAbleQuantity}</span>
                 <p>Price:{price}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">Purchase</button>
+                    <label
+                        for="order-modal"
+                        onClick={() => setOrder(part)}
+                        className="btn btn-primary">Purchase</label>
                 </div>
             </div>
         </div>

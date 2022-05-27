@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PartsCard from '../PartsCard/PartsCard';
+import Modal from './Modal/Modal';
 
 const Parts = () => {
     const [parts, setParts] = useState([]);
+    const [order, setOrder] = useState(null);
 
     useEffect(() => {
         fetch('parts.json')
@@ -20,9 +22,11 @@ const Parts = () => {
                     parts.map(part => <PartsCard
                         key={part._id}
                         part={part}
+                        setOrder={setOrder}
                     ></PartsCard>)
                 }
             </div>
+            {order && <Modal order={order}></Modal>}
         </div>
     );
 };
