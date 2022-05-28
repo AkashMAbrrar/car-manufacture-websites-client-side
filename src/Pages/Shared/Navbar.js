@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <header className='sticky top-0 z-50'>
-            <div className="navbar bg-neutral">
+            <div className="navbar bg-primary">
                 <div className="navbar-start relative">
                     <div className="dropdown">
                         <label tabindex="0" className="btn btn-ghost lg:hidden">
