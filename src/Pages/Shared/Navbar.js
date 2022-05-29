@@ -1,7 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
+
+    const [user, loading, error] = useAuthState(auth);
+
+    const logout = () => {
+        signOut(auth);
+    }
+
     return (
         <header className='sticky top-0 z-50'>
             <div className="navbar bg-primary">
@@ -14,7 +24,7 @@ const Navbar = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/'>About</Link></li>
                             <li><Link to='/'>Reviews</Link></li>
-                            <li><Link to='/login'>Login</Link></li>
+                            <li>{user ? <button onClick={logout} className="btn btn-ghost">SignOut</button> : <Link to='/login'>Login</Link>}</li>
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case text-white text-xl">Parts Carnival</a>
@@ -24,7 +34,7 @@ const Navbar = () => {
                         <li><Link to='/' className='text-white'>Home</Link></li>
                         <li><Link to='/' className='text-white'>About</Link></li>
                         <li><Link to='/' className='text-white'>Reviews</Link></li>
-                        <li><Link to='/login' className='text-white'>Login</Link></li>
+                        <li>{user ? <button onClick={logout} className="btn btn-ghost text-white">Signout</button> : <Link to='/login' className='text-white'>Login</Link>}</li>
                     </ul>
                 </div>
             </div>
