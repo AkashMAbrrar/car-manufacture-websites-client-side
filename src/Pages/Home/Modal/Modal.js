@@ -15,14 +15,14 @@ const Modal = ({ order, setOrder }) => {
             <input type="checkbox" id="order-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label for="order-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label for="order-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg text-primary text-center">Order For:{name}</h3>
                     <form onSubmit={handleOrder} className="grid grid-cols-1 gap-3 justify-items-center mt-2">
-                        <input type="number" name="quantity" value={AvailAbleQuantity} placeholder="Availble Quantity" class="input input-bordered w-full max-w-xs" />
-                        <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full max-w-xs" />
-                        <input type="email" name="email" placeholder="Your Email" class="input input-bordered w-full max-w-xs" />
-                        <input type="text" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
-                        <input type="submit" value="Submit" class="btn btn-primary w-full max-w-xs" />
+                        <input type="number" name="quantity" value={AvailAbleQuantity} placeholder="Availble Quantity" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="name" placeholder="Your Name" className="input input-bordered w-full max-w-xs" />
+                        <input type="email" name="email" placeholder="Your Email" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />
+                        <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" />
                     </form>
                 </div>
             </div>

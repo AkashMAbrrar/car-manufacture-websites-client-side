@@ -1,18 +1,35 @@
 import React from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
+import Loading from './Loading';
 
 const Login = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
-    if (user) {
-        console.log(user)
+    let authError;
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+    if (error || gError) {
+        authError = <p className='text-red-500 font-bold'><small>Error:{error?.message || gError?.message}</small></p>
+    }
+
+    if (gUser || user) {
+        console.log(gUser || user);
     }
 
     const onSubmit = data => {
-        console.log(data)
+        console.log(data);
+        signInWithEmailAndPassword(data.email, data.password)
     };
 
     return (
@@ -70,10 +87,11 @@ const Login = () => {
                                 )}
                             />
                             <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                         </div>
+                        {authError}
                         <input className='btn btn-primary w-full max-w-xs text-white' value='Login' type="submit" />
                     </form>
                     <div className="divider">OR</div>
