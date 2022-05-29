@@ -16,7 +16,7 @@ const PartsCard = ({ part, setOrder }) => {
                 <p>Price:{price}</p>
                 <div className="card-actions">
                     <label
-                        for="order-modal"
+                        htmlFor="order-modal"
                         onClick={() => setOrder(part)}
                         className="btn btn-primary">Purchase</label>
                 </div>

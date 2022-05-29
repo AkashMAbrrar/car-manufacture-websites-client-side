@@ -7,6 +7,7 @@ import Login from './Pages/Shared/Login';
 import LostPage from './Pages/Shared/LostPage';
 import Navbar from './Pages/Shared/Navbar';
 import Register from './Pages/Shared/Register';
+import { ToastContainer, toastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<LostPage></LostPage>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );
