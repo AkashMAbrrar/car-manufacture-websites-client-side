@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import Loading from './Loading';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
+
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -34,15 +35,15 @@ const Login = () => {
     };
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex h-screen justify-center items-center my-10'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-xl font-bold text-center">Login Here</h2>
+                    <h2 className="text-xl font-bold text-center">Registration Here</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Provide Us Your Email Address</span>
+                                <span className="label-text">Your Email Address</span>
                             </label>
                             <input
                                 type="email"
@@ -64,6 +65,27 @@ const Login = () => {
                             <label className="label">
                                 {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                                 {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Enter Your Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Your Name"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("name",
+                                    {
+                                        required: {
+                                            value: true,
+                                            message: 'Name Is Reqired'
+                                        }
+                                    }
+                                )}
+                            />
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs">
@@ -93,13 +115,13 @@ const Login = () => {
                             </label>
                         </div>
                         {authError}
-                        <input className='btn btn-primary w-full max-w-xs text-white' value='Login' type="submit" />
+                        <input className='btn btn-primary w-full max-w-xs text-white' value='Registration' type="submit" />
                     </form>
                     <p>
-                        <small>New To Parts Carnival?
+                        <small>Already Have An Account
                             <Link
-                                className='text-accent-focus'
-                                to='/register'>  Create A New Account</Link>
+                                className='text-accent-focus font-bold'
+                                to='/login'> Login Please</Link>
                         </small></p>
                     <div className="divider">OR</div>
                     <button
@@ -111,4 +133,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
