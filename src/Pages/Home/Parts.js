@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PartsCard from '../PartsCard/PartsCard';
+import RequireAuth from '../Shared/RequireAuth';
 import Modal from './Modal/Modal';
 
 const Parts = () => {
@@ -26,10 +27,12 @@ const Parts = () => {
                     ></PartsCard>)
                 }
             </div>
-            {order && <Modal
-                setOrder={setOrder}
-                order={order}
-            ></Modal>}
+            {order && <RequireAuth>
+                <Modal
+                    setOrder={setOrder}
+                    order={order}
+                ></Modal>
+            </RequireAuth>}
         </div>
     );
 };
