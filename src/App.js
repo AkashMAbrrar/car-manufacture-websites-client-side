@@ -11,6 +11,10 @@ import { ToastContainer, toastContainer } from 'react-toastify';
 import Blogs from './Pages/Blogs/Blogs';
 import Portfolio from './Pages/Blogs/Portfolio';
 import Reviews from './Pages/Blogs/Reviews';
+import RequireAuth from './Pages/Shared/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrder from './Pages/Dashboard/MyOrder';
+import MyReview from './Pages/Dashboard/MyReview';
 
 function App() {
   return (
@@ -24,6 +28,13 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/review' element={<Reviews></Reviews>}></Route>
+
+        {/* use nested routes */}
+        <Route path='/dashboard' element={<RequireAuth>  <Dashboard></Dashboard> </RequireAuth>}>
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path='reviews' element={<MyReview></MyReview>}></Route>
+        </Route>
+
         <Route path='*' element={<LostPage></LostPage>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
