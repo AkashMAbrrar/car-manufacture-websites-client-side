@@ -7,7 +7,7 @@ const Parts = () => {
     const [order, setOrder] = useState(null);
 
     useEffect(() => {
-        fetch('parts.json')
+        fetch('http://localhost:5000/service')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
@@ -26,7 +26,10 @@ const Parts = () => {
                     ></PartsCard>)
                 }
             </div>
-            {order && <Modal order={order}></Modal>}
+            {order && <Modal
+                setOrder={setOrder}
+                order={order}
+            ></Modal>}
         </div>
     );
 };
