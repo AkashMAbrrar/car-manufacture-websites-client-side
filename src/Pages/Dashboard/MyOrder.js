@@ -9,7 +9,12 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://mighty-wave-39162.herokuapp.com/purchase?buyer=${user.email}`)
+            fetch(`https://mighty-wave-39162.herokuapp.com/purchase?buyer=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
