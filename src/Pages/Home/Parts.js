@@ -8,7 +8,7 @@ const Parts = () => {
     const [order, setOrder] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://mighty-wave-39162.herokuapp.com/service')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

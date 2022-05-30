@@ -22,7 +22,7 @@ const Modal = ({ order, setOrder }) => {
             phone: event.target.phone.value
         }
 
-        fetch('http://localhost:5000/purchase', {
+        fetch('https://mighty-wave-39162.herokuapp.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

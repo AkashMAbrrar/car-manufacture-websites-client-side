@@ -9,7 +9,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/purchase?buyer=${user.email}`)
+            fetch(`https://mighty-wave-39162.herokuapp.com/purchase?buyer=${user.email}`)
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
